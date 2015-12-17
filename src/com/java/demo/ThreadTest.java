@@ -5,7 +5,7 @@
  * 이 프로그램의 일부나 전부를 무단으로 복제하거나 배포하는 경우에는
  * 저작권의 침해가 되므로 주의하시기 바랍니다.
  */
-package com.test.lambda;
+package com.java.demo;
 
 /**
  * 이 클래스는...
@@ -14,13 +14,8 @@ package com.test.lambda;
  * Created on 2015. 12. 15.
  */
 
-public class LambdaTest {
+public class ThreadTest {
 
-	interface IAdd<V>{
-		
-		abstract V add(V x , V y);
-	}
-	
 	/**
 	 *
 	 * @param args
@@ -28,9 +23,18 @@ public class LambdaTest {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		Thread thread = new Thread( () -> System.out.println("Hello Thread"));
+		thread.start();
 		
-		IAdd<Integer>  lambda = (x,y) -> x + y;
-		System.out.println(lambda.add(3 ,  4));
+		try{
+			thread.join();
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+		
+		Runnable r = () -> System.out.println("Hello Runnable");
+		
 	}
 
 }

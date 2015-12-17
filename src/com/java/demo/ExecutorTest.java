@@ -5,7 +5,7 @@
  * 이 프로그램의 일부나 전부를 무단으로 복제하거나 배포하는 경우에는
  * 저작권의 침해가 되므로 주의하시기 바랍니다.
  */
-package com.test.lambda;
+package com.java.demo;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
